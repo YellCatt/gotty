@@ -1,4 +1,4 @@
-name: "Quick build test"
+name: "Quick Build"
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
 
 
 jobs:
-  quick-build-test:
+  quick-build:
     runs-on: "ubuntu-latest"
 
     steps:
