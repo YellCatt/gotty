@@ -42,6 +42,11 @@ jobs:
     - name: "Build & test"
       run: "make tools test cross_compile"
 
+    - name: Build linux/mipsle binary
+      run: |
+        mkdir -p builds/pkg/linux_mipsle
+        CGO_ENABLED=0 GOOS=linux GOARCH=mipsle GOMIPS=softfloat go build -ldflags="-s -w -extldflags=-static" -tags="netgo,osusergo" -o builds/pkg/linux_mipsle/gotty
+        ls -la builds/pkg/linux_mipsle
     - name: Upload artifacts
       if: ${{ !env.ACT }}
       uses: actions/upload-artifact@v7
