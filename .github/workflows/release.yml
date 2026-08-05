@@ -15,7 +15,7 @@ jobs:
           - os: linux
             arch: mipsle
             suffix: linux_mipsle
-            goflags: CGO_ENABLED=0 GOOS=linux GOARCH=mipsle GOMIPS=softfloat GOEXPERIMENT=nofutex
+            goflags: CGO_ENABLED=0 GOOS=linux GOARCH=mipsle GOMIPS=softfloat
             ldflags: "-s -w -X main.Version=dev-latest -extldflags=-static"
             tags: "netgo,osusergo"
           - os: linux
